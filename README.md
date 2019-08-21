@@ -1,1 +1,1 @@
-Simple program Modbus Tcp Scanner created for such cases when protocol modbus tcp not defined
+A simple program "Modbus Tcp Scanner" created for such cases when protocol modbus tcp not defined.
