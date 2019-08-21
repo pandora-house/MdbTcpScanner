@@ -146,7 +146,7 @@ public class SocketEngine implements Runnable {
 
         Socket socketConnected = null;
 
-        while (!Thread.currentThread().isInterrupted()) {
+//        while (!Thread.currentThread().isInterrupted()) {
 
             for (int i = ip3_1int; i <= ip3_2int; i++) {
                 for (int j = ip4_1int; j <= ip4_2int; j++) {
@@ -198,7 +198,6 @@ public class SocketEngine implements Runnable {
                 progress.setMaximum(prgrsFun);
 
                 for (final byte fun : funArray) {
-
                     for (int i = 0; i < scnQuantity; i++) {
 
                         cntrFunQuant++;
@@ -256,12 +255,16 @@ public class SocketEngine implements Runnable {
 
                                     JOptionPane.showMessageDialog(frame, "Complete!");
                                     progress.setValue(0);
+                                    stop = true;
                                     break;
                                 }
                             }
                             if (stop) {
                                 break;
                             }
+                            break;
+                        }
+                        if (stop) {
                             break;
                         }
                     }
@@ -276,6 +279,6 @@ public class SocketEngine implements Runnable {
                 }
             }
             Thread.currentThread().interrupt();
-        }
+//        }
     }
 }
