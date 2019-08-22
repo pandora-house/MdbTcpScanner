@@ -130,6 +130,16 @@ public class SocketEngine implements Runnable {
         }
         return response;
     }
+    
+    private void closeSocket(Socket socket){
+        if(socket != null){
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     @Override
     public void run() {
@@ -269,11 +279,13 @@ public class SocketEngine implements Runnable {
                         }
                     }
                     if (stop) {
+                        closeSocket(socketConnected);
                         break;
                     }
 
                     if (prgrsFun == cntrFunQuant) {
                         JOptionPane.showMessageDialog(frame, "Can't find valid function!");
+                        closeSocket(socketConnected);
                         break;
                     }
                 }
