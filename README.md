@@ -1,1 +1,1 @@
-A simple program "Modbus Tcp Scanner" created for such cases when protocol modbus tcp not defined.
+The program will be useful when exchange parameters Modbus Tcp not knowing. The program iterate over possible settings combinations and display successful result.
